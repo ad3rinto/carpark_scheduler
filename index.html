@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ten10 Services - Clinical & Care Excellence</title>
+    <meta name="description" content="Professional residential and nursing care services delivered by qualified clinical teams. Clinical excellence meets compassionate care.">
+     <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <div class="logo-icon">T10</div>
+                <div class="logo-text">
+                    <h1>Ten10 Services</h1>
+                    <p>Clinical & Care Excellence</p>
+                </div>
+            </div>
+            <div class="nav-menu">
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#about" class="nav-link">About Us</a>
+                <a href="#contact" class="nav-cta">Contact</a>
+            </div>
+            <button class="mobile-toggle" onclick="toggleMobileMenu()">☰</button>
+        </div>
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="#services" onclick="toggleMobileMenu()">Services</a>
+            <a href="#about" onclick="toggleMobileMenu()">About Us</a>
+            <a href="#contact" onclick="toggleMobileMenu()">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-badge">Trusted by Healthcare Professionals</div>
+                <h2>Clinical Excellence.<br>Compassionate Care.</h2>
+                <p>Professional residential and nursing care services delivered by qualified clinical teams. Where evidence-based practice meets person-centered support.</p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn-primary">Make a Referral</a>
+                    <a href="#services" class="btn-secondary">Our Services</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="section-container">
+            <div class="section-header">
+                <h3>Our Services</h3>
+                <p>Comprehensive care solutions designed for complex clinical needs</p>
+            </div>
+
+            <div class="services-grid">
+                <!-- Residential Care -->
+                <div class="service-card">
+                    <div class="service-icon residential">❤</div>
+                    <h4>Residential Care</h4>
+                    <p>24-hour personal care for individuals who need support with daily living activities. Our trained care teams provide dignity-focused assistance in a homely environment.</p>
+                    <ul class="service-list">
+                        <li>Person-centered care plans</li>
+                        <li>Medication management</li>
+                        <li>Activities & wellbeing programs</li>
+                        <li>Nutritional support</li>
+                    </ul>
+                </div>
+
+                <!-- Nursing Care -->
+                <div class="service-card nursing">
+                    <div class="service-icon nursing">🛡</div>
+                    <h4>Nursing Care</h4>
+                    <p>Registered nurse-led care for complex clinical conditions. Continuous clinical oversight for residents with higher acuity needs and medical dependencies.</p>
+                    <ul class="service-list">
+                        <li>24/7 RGN/RMN supervision</li>
+                        <li>Clinical interventions & monitoring</li>
+                        <li>Chronic disease management</li>
+                        <li>Palliative & end-of-life care</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Standards Banner -->
+            <div class="standards-banner">
+                <div class="standards-text">
+                    <h5>CQC Regulated & Monitored</h5>
+                    <p>Compliant with Health & Social Care Act 2008 regulations</p>
+                </div>
+                <div class="standards-icons">
+                    <div class="standards-icon">
+                        <div>🏆</div>
+                        <p>Quality Assured</p>
+                    </div>
+                    <div class="standards-icon">
+                        <div>👥</div>
+                        <p>Clinical Teams</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="section-container">
+            <div class="section-header">
+                <h3>About Ten10 Services</h3>
+            </div>
+
+            <div class="about-grid">
+                <div class="about-content">
+                    <p>We're a clinically-led care provider committed to delivering exceptional outcomes for residents with complex needs. Our multidisciplinary teams combine nursing expertise with person-centered support.</p>
+                    <p>Every resident receives an individualized care plan developed in collaboration with referring professionals, families, and our clinical staff. We maintain robust governance frameworks and participate in continuous quality improvement initiatives.</p>
+                    <p>Our services are built on evidence-based practice, transparent communication, and clinical accountability. We understand the responsibilities healthcare professionals face when making care placements.</p>
+                </div>
+
+                <div class="about-features">
+                    <div class="feature-card">
+                        <h5>Clinical Governance</h5>
+                        <p>Robust policies, audits, and incident management systems ensure safe, high-quality care delivery.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h5>Professional Collaboration</h5>
+                        <p>We work closely with GPs, consultants, and community health teams to ensure coordinated care.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h5>Safeguarding Priority</h5>
+                        <p>Comprehensive safeguarding protocols with designated leads and regular staff training.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h5>Transparent Reporting</h5>
+                        <p>Regular clinical updates and open communication channels with referring professionals.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="section-container">
+            <div class="section-header">
+                <h3>Get In Touch</h3>
+                <p>Discuss referrals or arrange a professional visit</p>
+            </div>
+
+            <div class="contact-grid">
+                <!-- Contact Form -->
+                <div class="contact-form">
+                    <h4>Professional Enquiry</h4>
+                    <div id="contactFormContent">
+                        <div class="form-group">
+                            <label>Full Name *</label>
+                            <input type="text" id="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Organization</label>
+                            <input type="text" id="organization">
+                        </div>
+                        <div class="form-group">
+                            <label>Email *</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Phone</label>
+                            <input type="tel" id="phone">
+                        </div>
+                        <div class="form-group">
+                            <label>Message *</label>
+                            <textarea id="message" required></textarea>
+                        </div>
+                        <button class="btn-submit" onclick="submitForm()">Submit Enquiry</button>
+                    </div>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="contact-info">
+                    <h4>Contact Details</h4>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon phone">📞</div>
+                            <div class="contact-item-content">
+                                <p>Phone</p>
+                                <p>0800 123 4567</p>
+                                <p>Available 24/7 for urgent referrals</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon email">✉</div>
+                            <div class="contact-item-content">
+                                <p>Email</p>
+                                <p>referrals@ten10services.co.uk</p>
+                                <p>Response within 24 hours</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon address">📍</div>
+                            <div class="contact-item-content">
+                                <p>Address</p>
+                                <p>Ten10 Services Care Home</p>
+                                <p>United Kingdom</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-note">
+                        <h5>For Healthcare Professionals</h5>
+                        <p>We welcome site visits and pre-admission assessments. Contact us to arrange a convenient time to tour our facilities and meet our clinical team.</p>
+                        <p>Urgent placements: Call our 24/7 admissions line</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-brand">
+                        <div class="footer-logo">T10</div>
+                        <span>Ten10 Services</span>
+                    </div>
+                    <p style="color: #bfdbfe; font-size: 0.875rem;">Clinical and care excellence for those who need it most.</p>
+                </div>
+                <div class="footer-section">
+                    <h6>Quick Links</h6>
+                    <ul>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h6>Professional Resources</h6>
+                    <ul>
+                        <li>CQC Registration</li>
+                        <li>Safeguarding Policies</li>
+                        <li>Quality Reports</li>
+                        <li>Professional Standards</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Ten10 Services. All rights reserved. | Registered with CQC | ten10services.co.uk</p>
+            </div>
+        </div>
+    </footer>
+<script src="script2.js"></script>
+</body>
