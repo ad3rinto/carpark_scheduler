@@ -33,11 +33,27 @@ function submitForm() {
     const name = document.getElementById('name').value;
     const email = document.getElementById('email').value;
     const message = document.getElementById('message').value;
+    const organization = document.getElementById('organization').value;
+    const phone = document.getElementById('phone').value;
 
     // Basic validation
     if (name && email && message) {
         const formContent = document.getElementById('contactFormContent');
-        
+
+        // Construct mailto link
+        const subject = encodeURIComponent(`New Enquiry from ${name}`);
+        const body = encodeURIComponent(
+            `Name: ${name}\n` +
+            `Email: ${email}\n` +
+            `Organization: ${organization || 'Not provided'}\n` +
+            `Phone: ${phone || 'Not provided'}\n` +
+            `Message: ${message}`
+        );
+        const mailtoLink = `mailto:info@ten10services.co.uk?subject=${subject}&body=${body}`;
+
+        // Open mailto link
+        window.location.href = mailtoLink;
+
         // Show success message
         formContent.innerHTML = `
             <div class="success-message">
