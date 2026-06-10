@@ -5,67 +5,137 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Car Park Scheduler</title>
     <meta name="description" content="Fair car park space allocation scheduler for colleagues">
+    
+    <!-- Google Fonts - Roboto for Material Design -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="app-container">
-        <header>
-            <h1>🚗 Car Park Scheduler</h1>
-            <p class="subtitle">Fair allocation for CP348 & CP435</p>
+        <header class="app-bar">
+            <div class="header-content">
+                <div class="logo-section">
+                    <span class="material-icons logo-icon">local_parking</span>
+                    <h1>Car Park Scheduler</h1>
+                </div>
+                <p class="subtitle">Fair allocation for CP348 & CP435</p>
+            </div>
         </header>
 
         <main>
             <!-- Info Panel -->
             <section class="info-panel">
+                <div class="section-header">
+                    <span class="material-icons section-icon">info</span>
+                    <h2>Parking Spots Information</h2>
+                </div>
                 <div class="parking-spot-info">
                     <div class="spot-card cp348">
-                        <h3>CP348</h3>
-                        <p>Available: Mon, Tue, Thu, Fri</p>
-                        <p class="unavailable">❌ Not available: Wednesday</p>
+                        <div class="spot-header">
+                            <span class="material-icons spot-icon">parking</span>
+                            <h3>CP348</h3>
+                        </div>
+                        <div class="spot-details">
+                            <p><span class="material-icons tiny">check_circle</span> Available: Mon, Tue, Thu, Fri</p>
+                            <p class="unavailable"><span class="material-icons tiny">cancel</span> Not available: Wednesday</p>
+                        </div>
                     </div>
                     <div class="spot-card cp435">
-                        <h3>CP435</h3>
-                        <p>Available: Tue, Fri only</p>
-                        <p class="unavailable">❌ Not available: Mon, Wed, Thu</p>
+                        <div class="spot-header">
+                            <span class="material-icons spot-icon">parking</span>
+                            <h3>CP435</h3>
+                        </div>
+                        <div class="spot-details">
+                            <p><span class="material-icons tiny">check_circle</span> Available: Tue, Fri only</p>
+                            <p class="unavailable"><span class="material-icons tiny">cancel</span> Not available: Mon, Wed, Thu</p>
+                        </div>
                     </div>
                 </div>
             </section>
 
             <!-- User Selection -->
             <section class="user-selection">
-                <h2>Select Your Name</h2>
+                <div class="section-header">
+                    <span class="material-icons section-icon">people</span>
+                    <h2>Select Your Name</h2>
+                </div>
                 <div class="user-buttons">
-                    <button class="user-btn" data-user="Ronnie" onclick="selectUser('Ronnie')">Ronnie</button>
-                    <button class="user-btn" data-user="Ade" onclick="selectUser('Ade')">Ade</button>
-                    <button class="user-btn" data-user="Rebecca" onclick="selectUser('Rebecca')">Rebecca</button>
-                    <button class="user-btn" data-user="Joe" onclick="selectUser('Joe')">Joe</button>
+                    <button class="user-btn" data-user="Ronnie" onclick="selectUser('Ronnie')">
+                        <span class="material-icons btn-icon">person</span>
+                        Ronnie
+                    </button>
+                    <button class="user-btn" data-user="Ade" onclick="selectUser('Ade')">
+                        <span class="material-icons btn-icon">person</span>
+                        Ade
+                    </button>
+                    <button class="user-btn" data-user="Rebecca" onclick="selectUser('Rebecca')">
+                        <span class="material-icons btn-icon">person</span>
+                        Rebecca
+                    </button>
+                    <button class="user-btn" data-user="Joe" onclick="selectUser('Joe')">
+                        <span class="material-icons btn-icon">person</span>
+                        Joe
+                    </button>
                 </div>
                 <p id="selectedUser" class="selected-user"></p>
             </section>
 
             <!-- Holiday Input -->
             <section class="holiday-section" id="holidaySection" style="display: none;">
-                <h2>Add Your Holidays</h2>
-                <p class="hint">Mark dates when you're away - your slots will be available for others</p>
-                <div class="holiday-input">
-                    <input type="date" id="holidayStart" min="">
-                    <span>to</span>
-                    <input type="date" id="holidayEnd" min="">
-                    <button class="btn-add" onclick="addHoliday()">Add Holiday</button>
+                <div class="section-header">
+                    <span class="material-icons section-icon">flight_takeoff</span>
+                    <h2>Add Your Holidays</h2>
+                </div>
+                <p class="hint"><span class="material-icons tiny">lightbulb</span> Mark dates when you're away - your slots will be available for others</p>
+                <div class="holiday-input-card">
+                    <div class="input-group">
+                        <label for="holidayStart">
+                            <span class="material-icons">event</span>
+                            From
+                        </label>
+                        <input type="date" id="holidayStart" min="">
+                    </div>
+                    <span class="separator">to</span>
+                    <div class="input-group">
+                        <label for="holidayEnd">
+                            <span class="material-icons">event</span>
+                            To
+                        </label>
+                        <input type="date" id="holidayEnd" min="">
+                    </div>
+                    <button class="btn-add" onclick="addHoliday()">
+                        <span class="material-icons">add_circle</span>
+                        Add Holiday
+                    </button>
                 </div>
                 <div class="holiday-list" id="holidayList">
-                    <h4>Your Holidays:</h4>
+                    <h4><span class="material-icons tiny">list</span> Your Holidays:</h4>
                     <ul id="holidayDates"></ul>
                 </div>
             </section>
 
             <!-- Schedule Display -->
             <section class="schedule-section">
-                <h2>Weekly Schedule</h2>
+                <div class="section-header">
+                    <span class="material-icons section-icon">calendar_today</span>
+                    <h2>Weekly Schedule</h2>
+                </div>
                 <div class="schedule-controls">
-                    <button class="btn-nav" onclick="previousWeek()">◀ Previous</button>
+                    <button class="btn-nav" onclick="previousWeek()">
+                        <span class="material-icons">chevron_left</span>
+                        Previous
+                    </button>
                     <span id="currentWeekLabel"></span>
-                    <button class="btn-nav" onclick="nextWeek()">Next ▶</button>
+                    <button class="btn-nav" onclick="nextWeek()">
+                        Next
+                        <span class="material-icons">chevron_right</span>
+                    </button>
                 </div>
                 <div class="schedule-grid" id="scheduleGrid">
                     <!-- Generated by JS -->
@@ -74,7 +144,10 @@
 
             <!-- Fairness Stats -->
             <section class="stats-section">
-                <h2>Allocation Statistics</h2>
+                <div class="section-header">
+                    <span class="material-icons section-icon">equalizer</span>
+                    <h2>Allocation Statistics</h2>
+                </div>
                 <div class="stats-grid" id="statsGrid">
                     <!-- Generated by JS -->
                 </div>
@@ -82,8 +155,14 @@
 
             <!-- Actions -->
             <section class="actions-section">
-                <button class="btn-regenerate" onclick="regenerateSchedule()">🔄 Regenerate Fair Schedule</button>
-                <button class="btn-clear" onclick="clearHolidays()">🗑️ Clear All Holidays</button>
+                <button class="btn-regenerate" onclick="regenerateSchedule()">
+                    <span class="material-icons">refresh</span>
+                    Regenerate Fair Schedule
+                </button>
+                <button class="btn-clear" onclick="clearHolidays()">
+                    <span class="material-icons">delete_forever</span>
+                    Clear All Holidays
+                </button>
             </section>
         </main>
 
